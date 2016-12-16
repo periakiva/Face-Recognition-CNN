@@ -8,7 +8,7 @@ t = cputime;
 encoding = 'vggm128-fc7' ;
 augmentation = false ;
 encoder = loadEncoder(encoding) ;
-pos.names = getImageSet('data/myImages', augmentation) ;
+pos.names = getImageSet('/path/to/data/train', augmentation) ;
 if numel(pos.names) == 0, error('Please add some images to data/myImages before running this exercise') ; end
 
 %%
@@ -39,7 +39,7 @@ lab;
 descriptors = [pos.descriptors];
 
 %% Testing Images
-pos.names = getImageSet('data/test', augmentation) ;
+pos.names = getImageSet('/path/to/data/test', augmentation) ;
 if numel(pos.names) == 0, error('Please add some images to data/myImages before running this exercise') ; end
 
 tnames={pos.names{:}};
